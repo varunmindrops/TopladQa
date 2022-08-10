@@ -1,22 +1,18 @@
-name: Laravel
+  on: push
+  name: Publish Website
+  jobs:
+    FTP-Deploy-Action:
+      name : FTP-Deploy-Action
+      runs-on : ubuntu-latest
+      steps:
 
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  web-deploy:
-    name:  Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get latest code
-      uses: actions/checkout@v2
-    
-    - name:  Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
+      -users : actions/checkout@v2.1.0
+        with:
         fetch-depth: 2
-        server: 159.89.171.253
-        username: root
-        password: Raghav2020@Test
+      -name : FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: 159.89.171.253
+        ftp-username: root
+        ftp-password: Raghav2020@Test
 
