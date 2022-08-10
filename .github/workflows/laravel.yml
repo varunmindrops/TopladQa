@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
@@ -30,8 +30,9 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-      
-        build:
+
+
+  build:
 
     runs-on: ubuntu-latest
 
@@ -53,9 +54,9 @@ jobs:
   
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Deployment
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@main
         with:
           host: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
