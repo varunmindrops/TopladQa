@@ -1,0 +1,55 @@
+
+Program........
+
+
+class Animal
+{
+	void makeSound(int i , int j)
+	{
+      System.out.println(" Dog says bow-bow");
+	}
+
+	void makeSound(int i , String s, boolean b)
+	{
+		System.out.println("cat says meow ");
+	}
+
+	 void makeSound( String s, int i, boolean b)
+	 {
+       System.out.println("Lion is Roaring");
+	 }
+	 void makeSound(int i ,boolean b, String s)
+	 {
+	 	System.out.println("make sound nd talking");
+	 }
+	   void makeSound(int i , int j ,int k) 
+	   {
+	   System.out.println("Cow says moo");
+      }
+
+}
+   class TestAnimal
+   {
+   	public static void main(String[] args) {
+   		Animal a1=new Animal();
+   		int num =10;
+   		int num1=20;
+   		String ss="Hello";
+   		a1.makeSound(num, num1);
+   		a1.makeSound(num, ss, true);
+   		a1.makeSound(ss, num , false);
+   		a1.makeSound(num1, true, ss);
+   		a1.makeSound(num , num1, 30);
+   	}
+   }
+
+**********Output*********
+
+D:\RRA>javac Animal.java
+
+D:\RRA>java TestAnimal
+ Dog says bow-bow
+cat says meow
+Lion is Roaring
+make sound nd talking
+Cow says moo

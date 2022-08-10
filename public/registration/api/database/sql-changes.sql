@@ -1,0 +1,1 @@
+ALTER TABLE `teachers` ADD `resume_url` TEXT NULL DEFAULT NULL AFTER `price_list_pic`;

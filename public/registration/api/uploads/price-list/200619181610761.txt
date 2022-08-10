@@ -1,0 +1,518 @@
+class and object :
+
+object : anything that has mass, occupies space.
+		will have physical properties.
+
+same in java, whenever we want to represent a physical existing object, we repressenet it using the 
+concepts of class and object.
+
+in java also, object exists and they have properties.
+
+
+As we discussed, that there may be any number of objects in java of same type. Each of those 
+objects will be made from one single BLUEPRINT.
+
+Now, in java, the physical quantity is represented by "objects".
+And the blueprint governing those object is called as "class".
+
+Whatever property we want in an object, we mention them in class as object takes its property
+from its blueprint(class).
+
+
+Object hone k liye class ka honaa mandatory hai.
+
+now pehle kaun aaega?? Object ya class??
+
+so we will create blueprint of an object first and foremost.
+
+class Building{
+	// properties of class is given here right inside class and not methods.
+	
+	double areaLand;
+	int floors;
+	int rooms;
+	boolean is_pool;
+	boolean is_garden;
+	String logo="CJ";
+	
+	public static void main(String[]args){
+	sopln("Creating an object");
+	//in java, to create an object we have 5 ways. But we shall learn 'new' keyword
+		sopln("Namo k liye ghar banaane ka kaam");
+
+	//syntax to create an object: new className();
+				new Building();
+	//This will create an anonymous object whose use cannot be made in future.So we hould have 
+	//stored the object at time of creation.
+		//syntax to store and create an object
+					
+			//className ref=new className();	
+
+		    Building nB=new Building();
+		
+		//To access the properties of the object we use reference variable
+			
+			nB.areaLand=2000.00;
+			nB.floors=10;
+			nB.rooms=100;
+			nB.is_garden=true;
+			nB.is_pool=false;
+			nB.logo="Kamal";
+		System.out.println(nB.areaLand);
+		System.out.println(nB.floors);
+		System.out.println(nB.rooms);
+		System.out.println(nB.is_garden);
+		System.out.println(nB.is_pool);
+		System.out.println(nB.logo);
+
+		sopln("Kejo k liye");
+		Building kB=new Building();
+		}
+	}
+
+
+Objects are independent of each other. And change in an object will not impact another object.
+However, if there is any change in the blueprint(class/members of the class) then there will be 
+impact on all the objets created from that blueprint(class).
+
+
+Creating 3rd human====	Human h3=new Human();
+				//firse update kro
+				//firse print k liye line likho
+				
+//As a matter of fact if I create 5000 objects I will have to repeat updation
+	// and print statements 5000 times.   Yes or no??
+				
+//This is tedious. And so we got the concept of methods.
+
+A method is used whenever we see repeatation of certain activity.				
+	So, a method may be declared inside the class so that each object could get it.
+	     Make sure, a method is not and never written inside another method.
+
+
+
+
+Method is also a member of a class just like dataMembers. It is declared inside a class which will
+be later be a part of object of that class.
+
+When we type referenceVariable.methodName(); then:
+
+1) Method/Function is called.
+2) Method/Function gets executed.
+3) After execution the control comes back to calling line(referenceVariable.methodName();)
+	After this program will execute furthur codes.
+
+
+__________________________________________________________________________________________________
+
+CLASS AND OBJECT :
+
+Object: 
+It is a real world entity that has state and behaviour.
+	State is represented by datamembers of the class.
+	Behaviour is represented by the methods of the class.
+
+An object occupies all the properties mentioned(declared) in the class.
+An object is used to store multiple datamembers and methods as one single unit and each object 
+is nothing but a group of all those datamembers and methods.
+
+An object remains independent of another object i.e. a change in an object has no impact on 
+another object.
+
+Class: 
+It is the blueprint of an object. 
+It is the mastercopy from which objects are created.
+Any change in the class will impact all the objects created from the class.
+
+Note:
+	1) An object is the instance of a class.
+	2) An object can exist if and only if there is a class for it.
+	3) 'N' number of objects can be created from a single blueprint(class) and each of those 
+		objects shall remain independent of each other.
+	4) An object is created at Runtime by the JVM.
+	5) The JVM upon creating the object allocates an address to the object and is only known 
+	    to the JVM. User can see numerical representation of address of the object which is
+		 called as HashCode(#code).
+	6) The HashCode is only usable to the JVM.
+	7) The object is created inside a special memory area called as HEAP MEMORY AREA
+	8) The object created is provided values initialized inside the class. In case no value is 
+		initialized to a datamember, then JVM provides default value to that datamember.
+	9) To create an object , 'new' keyword is used
+					new className();
+						where className---> constructor
+		This type of object is called 'ANONYMOUS OBJECT' and is of least use as it can only
+		be used at time of creation.
+       10) To create an object which shall be used in future as well, we store it with creation
+		
+			className referenceVariable = new className();
+			(DataType)  (identifier)   (keyword) (constructor)
+			    (object storing)           (object creation)
+
+       11) To update or use the properties of the object we make use of 
+				referenceVariable.memberName;
+						member= datamembers, methods.
+
+       12) Whenever we have to store an object, the datatype will always be the className of that object.
+
+Programming Notes :
+	1) An object can be created inside any class as long as the class of object to be created
+		exists.
+	2) It is always advised to keep the blueprint part separated from the execution part.
+	3) When separating the logical part from executing part, then upon execution of 
+		program, the part containing main method is executed(run).
+
+	4) If we make programs separately and save them separately, then make sure all of them
+	   are compiled so that their class file exists.
+
+
+Instance and Local DataMembers:
+
+Instance DataMembers :
+	The datamembers declared inside the outer scope(scope of class) but outside the 
+	inner scopes(scope of methods,constructors or blocks) which shall be accquired by 
+	the object(instances) is called instance dataMembers
+	
+
+	The datamembers declared inside a class but outside the methods or constructors or
+	blocks which shall be accquired by the object.
+
+Declaration : Inside the outer scope but outside the inner scopes.
+
+Where usable: It can be used in all methods,constructors or blocks of the same class directly.
+	      Cannot be used inside static methods or static blocks directly. To use it here
+	      we need to create the object of the class and then use it through object reference.
+
+eg : class Any{
+	int a=10;
+	int b=20;
+	int c;
+
+	void show(){
+		c=a+b;
+		Sopln(a);
+		Sopln(b);
+		Sopln("Sum = "+c);
+		   }
+
+	public static void main(String[]args){
+		c=a+b; 			//error
+		Sopln(a);		//error    (non static cannot be referenced through
+		Sopln(b);		//error		static context)
+		Sopln("Sum = "+c);	//error
+			
+			//so we create an object to access it.
+			Any an=new Any();
+			an.c=(an.a+an.b);
+			Sopln(an.c);
+ 			
+			an.show();
+			} 
+		}	
+			
+Stored at : Heap Memory 
+
+When does it get allocated in memory : When object is created(runTime). When object is removed the 
+					memory is released.
+
+Default Value : Yes supported
+
+Access Specifier/Modifier : Yes we can use access specifier/modifier with this
+
+
+
+Local DataMembers :
+ The datamembers declared inside the inner blocks(scope of methods,constructors
+			or blocks) is called local dataMembers.
+
+Declaration : Inside the scope of methods,constructors or blocks.
+
+Where used : Can be used only inside the scope where they are declared.
+
+		class Any{
+
+			void show(){
+				int a=10;		
+				int b=20;
+				String value="Addition";    // all correct here as the DataMembers are 	
+				int c=a+b;		    // being used in the same block where 
+				Sopln(c);		    // the DataMembers are declared	
+				Sopln(value);
+				}
+
+			void display(){
+				int dispA=100;
+				int dispB=50;
+				int dispC;
+				      Sopln(a);		//
+				      Sopln(b);		//	error (Cannot find Symbol);
+				      Sopln(c);		//
+				      Sopln(value);	//	
+				      Sopln(dispA);
+				      Sopln(dispB);
+					dispC=dispA+dispB;
+				      Sopln(dispC);				
+				      }		
+				}
+
+Stored at : Stack Memory
+
+When does it get allocated in memory : 	When method is called and is being executed.
+					as soon as method is finished and we return back to calling
+					line, memory is released.
+
+Default Value : Does not support default value. It must be initialized before use.
+
+Access Specifier/Modifier : Not supported. We cannot put access specifier/modifier with local 
+				data members.
+
+
+
+Methods : 
+It is used to represent an action performed by the object.
+If objects of a class has some behaviour to show, then we make use of methods.
+
+
+
+syntax :
+
+accessModifier static/non-static  returnType methodName (parameters){ 
+
+}
+		where, 
+accessModifier : provides or modifies visibility access to that method
+
+
+returnType :
+It is used to return values to calling line.
+<figure explaination>
+To return any value, we make use of 'return' keyword.
+A return keyword is always the last statement of the method, as any statement after it wont get
+executed.
+There can be only one return statement inside a method.
+
+
+parameters :
+whenever we want, a method to be executed, if there is some external factor involved,then we make 
+that method parametrized.
+A parameter is nothing but, external value that must be provided by the calling line(called as
+arguement) so as to  execute the method.
+A parameter is nothing but datamember declaration.
+The parameter is treated as local datamember in the method in which it was declared.
+Number of parameters in a method may be 'N'.
+A method may have 0 to N number of parameter(s).
+
+
+Cases of Local and Instance DataMembers :
+
+Case I)  An instance datamember can be used inside all of the non static method of the same class 
+	directly.
+
+	eg: 
+		class Animal{
+			String name;
+			String breed;
+			String color;
+
+			void print(){
+				sopln(name);
+				sopln(breed);
+				sopln(color);
+				}
+
+			void manipulate(){
+				name="Nobby";
+				breed="G.S.";
+				color="Golden";
+				}
+			  
+
+/*Note: In static methods, these instance datamembers cannot be used directly. In order to 
+	use there, we need object reference.*/
+			
+			static void show(){
+				name="Bony";
+				Sopln(breed);
+error: non-static cannot be referenced from static context.
+				}
+			}
+
+
+Case II) 
+	Local Datamembers cannot be used outside the method they are declared.
+	Even datamebers declared in parameters are treated as local Datamember.
+
+		class Calculator{
+			String brand;
+			
+			void add(int a,int b){
+				    int c=a+b;
+					Sopln("The first number is= "+a);
+					Sopln("The second number is= "+b);
+					Sopln("The sum is= "+c);
+		 			Sopln(brand);
+					}
+
+			void substract(int e, int f){
+				int d=b-a;				// cannot find symbol
+				Sopln("The first number is= "+b);	// cannot find symbol
+				Sopln("The second number is= "+a);	// cannot find symbol
+				Sopln("The difference is= "+d);		
+				Sopln(brand);
+				}
+			}
+	a and b are local datamembers to add method and hence wont be used in substract.
+
+
+
+Case 3)
+	Local datamembers in different methods of the same class can have same name.
+Since they can only be used in the methods where declared, so it wont impact if other method has 
+same named identifier.
+	
+		
+
+		class Calculator{
+			int a;
+			int b;
+
+			void add(){
+			   int c=a+b;
+                     	   Sopln(c);
+				}
+
+			void substract(){
+			    int c=a-b;
+			    Sopln(c);
+				}
+
+			int calculate(){
+			    int c=((a+a)*(b+b));
+			    return c;
+				}
+
+			void check(){
+			     int c=5;
+				Sopln(c);
+			     int c=calculate(); // error : variable c might already have been declared
+				c=calculate();
+				Sopln(c);
+				}
+			}
+
+
+
+Case 4) A local DataMember and an instance DataMember can have same name.
+
+	When the method will be called containing the datamember same as instance, then the 
+Local DataMember will be prioritized.
+
+		
+
+		class School{
+			String schoolName;
+			String affliation;
+			int noStudents;
+
+			void show(){
+				Sopln("ABC");
+				Sopln("+2");
+				Sopln(8000);
+				}
+	
+			void display(){
+				String schoolName="PCS";
+				String affliation="X";
+					int noStudents=4000;
+					Sopln(schoolName);
+					Sopln(affliation);
+					Sopln(noStudents);
+					}
+				
+
+Special Case :
+I have local Datamember with same name as Instance. But I dont want to refer the local Datamember
+instead I want to bypass to instance.
+
+In order to achieve this, we make use of a special reserved keyword, called as 'this' keyword.
+
+this : It is used to refer the currently executing object(object whose reference variable is being used
+or the object which is currently active)
+
+
+	
+			void display(){
+				String schoolName="PCS";
+				String affliation="X";
+				int noStudents=4000;
+					Sopln(this.schoolName);
+					Sopln(this.affliation);
+					Sopln(this.noStudents);
+
+					Sopln(schoolName);
+					Sopln(affliation);
+					Sopln(noStudents);
+
+					this.schoolName = schoolName;
+					Sopln(this.schoolName);
+					Sopln(this.affliation);
+					Sopln(this.noStudents);
+					}
+
+
+
+Method OverLoading :
+
+This phenomenon of writing a program which has multiple methods of same name where each of those
+method is unique because of change in paramters, is called method overloading.
+
+The method calling is decided on the basis of arguement passed.
+
+To achieve method overloading :
+1) Same class
+2) Same methodName
+3) Different parameters
+	3.1) Different type of parameters
+	3.2) Different sequence of parameters
+	3.3) Different number of parameters	
+
+
+
+
+Note: 
+There is no impact of returnType in overloading of methods. i.e. if overloaded methods have different
+returnType, then there is no problem in calling desired method.
+
+class Test{
+	void show(){
+	Sopln("nothing");
+	}
+
+	int show(int a){
+	Sopln(a);
+	}
+
+	String show(String a){
+	Sopln(a);
+	}
+
+	double show(Double a){
+	Sopln(a);
+	}
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

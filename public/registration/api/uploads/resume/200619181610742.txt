@@ -1,0 +1,47 @@
+class TestAnimalSound
+{
+public static void main(String args[])
+{
+AnimalSounds as=new AnimalSounds();
+Dog d1=new Dog();
+Cat c1=new Cat();
+Lion l1=new Lion();
+Insaan i1=new Insaan();
+Cow co1=new Cow();
+as.sound(c1);
+}}
+
+class AnimalSounds
+{
+void sound(Dog d1)
+{
+	System.out.println("Woof Woof");
+}
+void sound(Cat c1)
+{
+	System.out.println("Meowww");
+}
+void sound(Lion l1)
+{
+	System.out.println("Rooaaarrrrr");
+}
+void sound(Insaan i1)
+{
+	System.out.println("Bak Bak");
+}
+void sound(Cow co1)
+{
+	System.out.println("Mooooooo");
+}
+}
+
+class Dog
+{}
+class Cat
+{}
+class Lion
+{}
+class Insaan
+{}
+class Cow
+{}

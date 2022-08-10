@@ -1,0 +1,9 @@
+export const UPDATE_LOADER = 'UPDATE_LOADER';
+export const FETCH_CLASS_EXAMS = 'FETCH_CLASS_EXAMS';
+export const SAVE_CLASS_EXAMS = 'SAVE_CLASS_EXAMS';
+
+export default {
+    UPDATE_LOADER,
+    FETCH_CLASS_EXAMS,
+    SAVE_CLASS_EXAMS,
+};

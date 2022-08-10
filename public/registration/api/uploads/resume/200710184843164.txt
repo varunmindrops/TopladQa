@@ -1,0 +1,213 @@
+package Banking;
+
+public class User {
+String name;
+long accNo;
+private int balance;
+private int pin;
+{
+	System.out.println("**************WELCOME TO SBI*************");
+}
+User(String name,long accNo,int balance,int pin) {
+	this.name=name;
+	this.accNo=accNo;
+	this.balance=balance;
+	this.pin=pin;
+	}
+
+void setPin(int oldPin,int newPin) {
+	
+	if(this.pin==oldPin)
+	{
+	   this.pin=newPin;
+	   System.out.println("Your pin has been changed successfully.");
+		
+	}else {
+		System.out.println("Incorrect old pin");
+		
+	}}
+void  setWithdraw(long accNo,int amt){
+	if(this.accNo==accNo) {
+		this.balance=this.balance-amt;
+		if(this.balance<0) {
+			System.out.println("Insufficient balance");
+		}else {
+			System.out.println(this.name+" Your new balance is Rs. "+this.balance);
+		}}
+		
+	else {
+		System.out.println("Wrong account number.");
+		}
+	}
+void setDeposit(long accNo,int amt) {
+	if(this.accNo==accNo) {
+		this.balance=this.balance+amt;
+		System.out.println(this.name+" Your new balance is Rs. "+this.balance);
+	}else {
+		System.out.println("Wrong account number.");
+	}
+}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+package Banking;
+import java.util.Scanner;
+
+public class Verification  {
+	
+	int countOld=0;
+	int countNew=0;
+	int oldPin;
+	int newPin;
+	long accNo;
+	int amt;
+	
+	Verification(String name,long accNo,int balance,int pin){
+		User u1=new User(name,accNo,balance,pin);
+		System.out.println("For pin change=1");
+		System.out.println("For withdrawl=2");
+		System.out.println("For deposit=3");
+		Scanner x=new Scanner(System.in);
+		
+		int num=x.nextInt();
+		
+		if(num==1) {
+			System.out.println("please enter your 4 digits old pin");
+			getPin(u1);
+		}else if(num==2) {
+			System.out.println("please enter your 10 digits account number.");
+			
+			long accNo1=x.nextLong();
+			
+			getWithdraw(accNo1,u1);
+		}else if(num==3) {
+			System.out.println("please enter your 10 digits account number.");
+			
+			long accNo1=x.nextLong();
+			x.close();
+			
+			getDeposit(accNo1,u1);
+		}else {
+			System.out.println("Kindly select a proper input.");
+		}
+		}
+	
+	
+void getPin(User u1) {
+	Scanner y=new Scanner(System.in);
+	int oldPin=y.nextInt();
+	this.oldPin=oldPin;
+	while(oldPin!=0){
+        oldPin = oldPin/10;
+        countOld++;
+     }
+	
+	 if(countOld==4) {
+	    	 System.out.println("please enter your 4 digits new pin");
+		}
+	 
+	 else {
+		 
+			System.out.println("Inccorect old pin");
+			
+	 }
+		
+		int newPin=y.nextInt();
+		y.close();
+    this.newPin=newPin;
+	while(newPin!=0){
+        newPin = newPin/10;
+        countNew++;
+     }if(countNew==4) {
+    	 
+    	 u1.setPin(this.oldPin,this.newPin);
+     }else {
+    				System.out.println("Inccorect new pin");
+    			}
+     }
+	
+
+void getWithdraw(long accNo,User u1) {
+	this.accNo=accNo;
+	while(accNo!=0){
+        accNo = accNo/10;
+        countNew++;
+     }
+	if(countNew==10) {
+		
+		
+		System.out.println("please enter the amount to be withdrawn.");
+		Scanner z=new Scanner(System.in);
+		int amt=z.nextInt();
+		z.close();
+		u1.setWithdraw(this.accNo,amt);
+		
+	}else {
+		System.out.println("Kindly enter a 10 digit account number");
+	}}
+
+void getDeposit(long accNo,User u1) {
+	this.accNo=accNo;
+	
+	while(accNo!=0){
+        accNo = accNo/10;
+        countOld++;
+     }
+	if(countOld==10) {
+		System.out.println("please enter the amount to be deposited");
+		Scanner z=new Scanner(System.in);
+		int amt=z.nextInt();
+		z.close();
+		u1.setDeposit(this.accNo,amt);
+	}else {
+		System.out.println("Kindly enter a 10 digit account number");
+	}}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+package Banking;
+
+public class TestUser {
+
+	public static void main(String[] args) {
+		
+		Verification v=new Verification("Azad",9876543210l,50100,1234);
+		
+		}
+	}
+====================================================================================================================================================================================
+OutPut=>
+(Select 2 for Withdrawl)--
+
+For pin change=1
+For withdrawl=2
+For deposit=3
+2
+please enter your 10 digits account number.
+9876543210
+please enter the amount to be withdrawn.
+1000
+Azad Your new balance is Rs. 49100
+==========================================
+(Select 1 for Pin change)--
+
+For pin change=1
+For withdrawl=2
+For deposit=3
+1
+please enter your 4 digits old pin
+1234
+please enter your 4 digits new pin
+5678
+Your pin has been changed successfully.
+=========================================
+(Select 3 for Deposit)--
+
+For pin change=1
+For withdrawl=2
+For deposit=3
+3
+please enter your 10 digits account number.
+9876543210
+please enter the amount to be deposited
+1056
+Azad Your new balance is Rs. 57935
+

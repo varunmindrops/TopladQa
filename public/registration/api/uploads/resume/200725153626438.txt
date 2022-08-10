@@ -1,0 +1,494 @@
+class Building{
+	String ownerName;
+	String logo;
+	int noFloors;
+	int noRooms;                                
+	double areaLand;
+    boolean is_garden;
+boolean is_parking;
+boolean is_pool;
+int ac;
+int balcony;
+}
+
+class TestBuilding{
+	public static void main(String[]args){
+	
+	System.out.println("Namo's Building");
+System.out.println(" ");
+	Building b1=new Building();
+    
+    b1.ownerName="Namo";
+	b1.logo="NamoNamah";
+	b1.noFloors=10;
+	b1.noRooms=5;                               
+	b1.areaLand=400.20;
+    b1.is_garden=true;
+    b1.is_parking=true;
+    {
+   System.out.println("OwnerName of the Building= " +b1.ownerName);
+    System.out.println("name of the logo of the building= " +b1.logo);
+    System.out.println("Floors in the building= " +b1.noFloors);
+    System.out.println("Rooms on the floor of the building= " +b1.noRooms);
+    System.out.println("Area of the land= " +b1.areaLand);                                            
+    System.out.println("There is garden in the Building= " +b1.is_garden);
+    System.out.println("There is Parking in the Building= " +b1.is_parking);
+    }
+System.out.println(" ");
+    System.out.println("Kejo's Building");
+System.out.println(" ");
+	Building b2=new Building();
+    
+    b2.ownerName="Kejo";
+	b2.logo="KejoNamah";
+	b2.noFloors=15;
+	b2.noRooms=3;                               
+	b2.areaLand=600.20;
+    b2.is_garden=false;
+    b2.is_pool=true;
+    {
+   System.out.println("OwnerName of the Building= " +b2.ownerName);
+    System.out.println("name of the logo of the building= " +b2.logo);
+    System.out.println("Floors in the building= " +b2.noFloors);
+    System.out.println("Rooms on the floor of the building= " +b2.noRooms);
+    System.out.println("Area of the land= " +b2.areaLand);                                            
+    System.out.println("There is garden in the Building= " +b2.is_garden);
+    System.out.println("There is Pool in the Building= " +b2.is_pool);
+    }
+
+System.out.println(" ");
+System.out.println("Rg's Building");
+System.out.println(" ");
+	Building b3=new Building();
+    
+    b3.ownerName="Namo";
+	b3.logo="NamoNamah";
+	b3.noFloors=10;
+	b3.noRooms=5;                                
+	b3.areaLand=400.20;
+    b3.ac=20;
+    b3.balcony=5;
+    b3.is_garden=true;
+    b3.is_parking=true;
+    {
+   System.out.println("OwnerName of the Building= " +b3.ownerName);
+    System.out.println("name of the logo of the building= " +b3.logo);
+    System.out.println("Floors in the building= " +b3.noFloors);
+    System.out.println("Rooms on the floor of the building= " +b3.noRooms);
+    System.out.println("Area of the land= " +b3.areaLand); 
+    System.out.println("Ac in the building= " +b3.ac); 
+    System.out.println("balcony on the each floor= " +b3.balcony);  
+    System.out.println("There is garden in the Building= " +b3.is_garden);
+    System.out.println("There is Parking in the Building= " +b3.is_parking);
+}
+System.out.println(" ");
+    System.out.println("Ayush's Building");
+System.out.println(" ");
+
+
+    Building b4=new Building();
+    
+    b4.ownerName="Ayush";
+	b4.logo="Chowdhary";
+	b4.noFloors=5;
+	b4.noRooms=3;                                
+	b4.areaLand=400.20;
+    b4.ac=20;
+    b4.balcony=3;
+    
+    {
+   System.out.println("OwnerName of the Building= " +b4.ownerName);
+    System.out.println("name of the logo of the building= " +b4.logo);
+    System.out.println("Floors in the building= " +b4.noFloors);
+    System.out.println("Rooms on the floor of the building= " +b4.noRooms);
+    System.out.println("Area of the land= " +b4.areaLand); 
+    System.out.println("Ac in the building= " +b4.ac); 
+    System.out.println("balcony on the each floor= " +b4.balcony);  
+}
+System.out.println(" ");
+    System.out.println("Aniket's Building");
+System.out.println(" ");
+
+    Building b5=new Building();
+    
+    b5.ownerName="Aniket";
+	b5.logo="Lakra";
+	b5.noFloors=5;
+	b5.noRooms=3;                                
+	b5.areaLand=400.20;
+    //b5.ac=20;
+    b5.balcony=3;
+
+    
+    {
+   System.out.println("OwnerName of the Building= " +b5.ownerName);
+    System.out.println("name of the logo of the building= " +b5.logo);
+    System.out.println("Floors in the building= " +b5.noFloors);
+    System.out.println("Rooms on the floor of the building= " +b5.noRooms);
+    System.out.println("Area of the land= " +b5.areaLand); 
+    System.out.println("Ac in the building= " +b5.ac); 
+    System.out.println("balcony on the each floor= " +b5.balcony); 
+    System.out.println("Pool on the each floor= " +b5.is_pool);
+    System.out.println("There is garden in the Building= " +b5.is_garden);
+    
+    }
+
+	}
+}
+
+----------------------------------------------------------------
+
+//Program with Static Keyword
+
+class Bottles{
+	static String brandName;
+	String colour;
+	double length;
+	int bottleNo;
+}
+
+class TestBottles{
+	public static void main(String[]args){
+	Bottles b1=new Bottles();
+
+	b1.brandName="Thumbsup";
+	b1.colour="Black";
+	b1.length=5.5;
+	b1.bottleNo=101;
+	
+	System.out.println(" ");
+    System.out.println("Deatails of First Bottle: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("BrandName of the Bottle= " +b1.brandName);
+	System.out.println("Colour of the Bottle= " +b1.colour);
+	System.out.println("Length of the Bottle= " +b1.length);
+	System.out.println("BottleNo of the Bottle= " +b1.bottleNo);
+}
+	Bottles b2=new Bottles();
+
+	
+	b2.colour="Blue";
+	b2.length=10.5;
+	b2.bottleNo=102;
+	
+	System.out.println(" ");
+    System.out.println("Deatails of Second Bottle: ");
+    	System.out.println(" ");
+
+    {
+	System.out.println("BrandName of the Bottle= " +b2.brandName);
+		System.out.println("Colour of the Bottle= " +b2.colour);
+		System.out.println("Length of the Bottle= " +b2.length);
+		System.out.println("BottleNo of the Bottle= " +b2.bottleNo);
+		}
+
+		Bottles b3=new Bottles();
+
+	b3.brandName="fanta";
+	b3.colour="Orange";
+	b3.length=7.5;
+	b3.bottleNo=103;
+	
+	System.out.println(" ");
+    System.out.println("Deatails of Second Bottle: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("BrandName of the Bottle= " +b3.brandName);
+		System.out.println("Colour of the Bottle= " +b3.colour);
+		System.out.println("length of the Bottle= " +b3.length);
+		System.out.println("bottleNo of the Bottle= " +b3.bottleNo);
+}
+	}
+}
+
+--------------------------------------------------------------------------------
+
+class Employee{
+	static String compName;
+	String empName;
+	long mobile;
+	char gender;
+	int empNo;
+}
+
+class TestEmployee{
+	public static void main(String[]args){
+	Employee e1=new Employee();
+	Employee e2=new Employee();
+	Employee e3=new Employee();
+	Employee e4=new Employee();
+	Employee e5=new Employee();
+	Employee e6=new Employee();
+	
+	e1.compName="TCS";
+	e1.empName="Ayush";
+	e1.mobile=8860402224l;
+	e1.gender='m';
+	e1.empNo=101;
+
+	e2.empName="Aniket";
+	e2.mobile=9891005022l;
+	e2.gender='m';
+	e2.empNo=102;
+
+	e3.empName="kashish";
+	e3.mobile=8860444400l;
+	e3.gender='f';
+	e3.empNo=103;
+
+	e4.empName="Arti";
+	e4.mobile=8860404443l;
+	e4.gender='f';
+	e4.empNo=103;
+
+	e5.empName="pooja";
+	e5.mobile=9822336655l;
+	e5.gender='f';
+	e5.empNo=104;
+
+	e6.empName="ani";
+	e6.mobile=8860402224l;
+	e6.gender='m';
+	e6.empNo=101;
+
+	System.out.println(" ");
+    System.out.println("Details of First Employee: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Company Name of the employee= " +e1.compName);
+	System.out.println("Name of the Employee= " +e1.empName);
+	System.out.println("Mobile Number of the Employee= " +e1.mobile);
+	System.out.println("Gender of the Employee= " +e1.gender);
+	System.out.println("EmpNo of the Employee= " +e1.empNo);
+}
+
+System.out.println(" ");
+    System.out.println("Details of Second Employee: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Company Name of the employee= " +e2.compName);
+	System.out.println("Name of the Employee= " +e2.empName);
+	System.out.println("Mobile Number of the Employee= " +e2.mobile);
+	System.out.println("Gender of the Employee= " +e2.gender);
+	System.out.println("EmpNo of the Employee= " +e2.empNo);
+}
+
+
+System.out.println(" ");
+    System.out.println("Details of Third Employee: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Company Name of the employee= " +e3.compName);
+	System.out.println("Name of the Employee= " +e3.empName);
+	System.out.println("Mobile Number of the Employee= " +e3.mobile);
+	System.out.println("Gender of the Employee= " +e3.gender);
+	System.out.println("EmpNo of the Employee= " +e3.empNo);
+}
+
+System.out.println(" ");
+    System.out.println("Details of Fourth Employee: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Company Name of the employee= " +e4.compName);
+	System.out.println("Name of the Employee= " +e4.empName);
+	System.out.println("Mobile Number of the Employee= " +e4.mobile);
+	System.out.println("Gender of the Employee= " +e4.gender);
+	System.out.println("EmpNo of the Employee= " +e4.empNo);
+}
+
+
+System.out.println(" ");
+    System.out.println("Details of Fifth Employee: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Company Name of the employee= " +e5.compName);
+	System.out.println("Name of the Employee= " +e5.empName);
+	System.out.println("Mobile Number of the Employee= " +e5.mobile);
+	System.out.println("Gender of the Employee= " +e5.gender);
+	System.out.println("EmpNo of the Employee= " +e5.empNo);
+}
+
+System.out.println(" ");
+    System.out.println("Details of Sixth Employee: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Company Name of the employee= " +e6.compName);
+	System.out.println("Name of the Employee= " +e6.empName);
+	System.out.println("Mobile Number of the Employee= " +e6.mobile);
+	System.out.println("Gender of the Employee= " +e6.gender);
+	System.out.println("EmpNo of the Employee= " +e6.empNo);
+}
+
+}
+}
+-------------------------------------------------------------------------
+
+class Candidates{
+	
+	final String instName="Qspiders";
+	String candName;
+	int candID;
+	String batchName;
+	long mobile;
+	char gender;
+}
+
+class TestCandidates{
+	public static void main(String[]args){
+
+	Candidates c1=new Candidates();
+
+	c1.candName="Ayush";
+	c1.candID= 101;
+	c1.batchName="Java";
+	c1.mobile=8850302223l;
+	c1.gender='m';
+
+Candidates c2=new Candidates();
+
+	c2.candName="vivek";
+	c2.candID= 102;
+	c2.batchName="Python";
+	c2.mobile=9897546344l;
+	c2.gender='m';
+
+Candidates c3=new Candidates();
+
+	c3.candName="Ashi";
+	c3.candID= 105;
+	c3.batchName="Selenium";
+	c3.mobile=9891006655l;
+	c3.gender='f';
+
+System.out.println(" ");
+    System.out.println("Details of Fifth Candidate: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Institute Name of the Candidate= " +c1.instName);
+	System.out.println("Name of the Candidate= " +c1.candName);
+	System.out.println("ID of the Candidate= " +c1.candID);
+	System.out.println("Batch name of the candidate= " +c1.batchName);
+	System.out.println("mobile No of the Candidate= " +c1.mobile);
+	System.out.println("Gender of the Candidate= " +c1.gender);
+
+}
+
+
+System.out.println(" ");
+    System.out.println("Details of Second Candidate: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Institute Name of the Candidate= " +c2.instName);
+	System.out.println("Name of the Candidate= " +c2.candName);
+	System.out.println("ID of the Candidate= " +c2.candID);
+	System.out.println("Batch name of the candidate= " +c2.batchName);
+	System.out.println("mobile No of the Candidate= " +c2.mobile);
+	System.out.println("Gender of the Candidate= " +c2.gender);
+
+}
+
+
+System.out.println(" ");
+    System.out.println("Details of Third Candidate: ");
+    	System.out.println(" ");
+
+{
+	System.out.println("Institute Name of the Candidate= " +c3.instName);
+	System.out.println("Name of the Candidate= " +c3.candName);
+	System.out.println("ID of the Candidate= " +c3.candID);
+	System.out.println("Batch name of the candidate= " +c3.batchName);
+	System.out.println("mobile No of the Candidate= " +c3.mobile);
+	System.out.println("Gender of the Candidate= " +c3.gender);
+
+}
+	}
+}
+
+----------------------------------------------------------------------------------
+
+//Todays Assignment:
+
+class Trainers{
+	
+	static String trainerWorkPlace="Qspiders";
+	String trainerName;
+	int trainerID;
+	long mobile;
+	char gender;
+}
+
+class TestTrainers{
+	public static void main(String[]args){
+	Trainers t1=new Trainers();
+	
+	t1.trainerName="Rahul";
+	t1.trainerID=1001;
+	t1.mobile=8877669900l;
+	t1.gender='m';
+
+System.out.println(" ");
+System.out.println("Details of the Fisrt Trainer:");
+System.out.println(" ");
+
+	{
+	System.out.println("Name of the work place= " +t1.trainerWorkPlace);
+	System.out.println("Name of the trainer= " +t1.trainerName);
+	System.out.println("ID of the trainer= " +t1.trainerID);
+	System.out.println("Mobile no of the trainer= " +t1.mobile);
+	System.out.println("Gender of the trainer= " +t1.gender);
+}
+
+Trainers t2=new Trainers();
+	
+	t2.trainerName="Naman";
+	t2.trainerID=105;
+	t2.mobile=8877664433l;
+	t2.gender='m';
+
+System.out.println(" ");
+System.out.println("Details of the Second Trainer:");
+System.out.println(" ");
+
+	{
+	System.out.println("Name of the work place= " +t2.trainerWorkPlace);
+	System.out.println("Name of the trainer= " +t2.trainerName);
+	System.out.println("ID of the trainer= " +t2.trainerID);
+	System.out.println("Mobile no of the trainer= " +t2.mobile);
+	System.out.println("Gender of the trainer= " +t2.gender);
+}
+
+
+Trainers t3=new Trainers();
+	
+	t3.trainerName="Bobby";
+	t3.trainerID=1010;
+	t3.mobile=9891669900l;
+	t3.gender='m';
+
+System.out.println(" ");
+System.out.println("Details of the Third Trainer:");
+System.out.println(" ");
+
+	{
+	System.out.println("Name of the work place= " +t3.trainerWorkPlace);
+	System.out.println("Name of the trainer= " +t3.trainerName);
+	System.out.println("ID of the trainer= " +t3.trainerID);
+	System.out.println("Mobile no of the trainer= " +t3.mobile);
+	System.out.println("Gender of the trainer= " +t3.gender);
+}
+
+}
+}
+
+

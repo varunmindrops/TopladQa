@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    RewriteCond %{HTTP_HOST} ^raghavacademy.com$
+    RewriteRule ^(.*)$ https://toplad.in/$1 [L,R=301]
+    
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+    
+    Redirect 301 /blog/category/uncategorized/ https://toplad.in/blog/
+    Redirect 301 /cma/cma-combo-offer-2021 https://toplad.in/cma/cma-combo-offer
+    Redirect 301 /cs/cs-combo-offer-2021 https://toplad.in/cs/cs-combo-offer
+    Redirect 301 /ca/ca-combo-offer-2021 https://toplad.in/ca/ca-combo-offer
+    Redirect 301 /ca/ca-combo-offer-november-2021-exam-classes https://toplad.in/ca/ca-combo-offer-exam-classes
+    Redirect 301 /ca/ca-combo-offer-november-exam-classes https://toplad.in/ca/ca-combo-offer-exam-classes
+    Redirect 301 /cs/cs-combo-offer-june-2021-exam-classes https://toplad.in/cs/cs-combo-offer-classes
+    Redirect 301 /cma/cma-combo-offer-june-2021-exam-classes https://toplad.in/cma/cma-combo-offer-classes
+ </IfModule>
+

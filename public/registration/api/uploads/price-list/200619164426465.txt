@@ -1,0 +1,52 @@
+class Animal{
+	
+class Dog{
+	void makesound(Dog d1){
+
+	System.out.println("Dog bhoo.");
+	}
+}
+class Cat{
+	void makesound(Cat c1){
+	System.out.println("cat meow.");
+	}
+}
+class Lion{
+	void makesound(Lion l1){
+
+	System.out.println("lion is roaring");
+	}
+}
+
+class Cow{
+	void makesound(Cow co1){
+
+	System.out.println("Cow moo mooo.");
+	}
+}
+class Insaan{
+	void makesound(Insaan i1){
+	System.out.println("insaan hello hello hello");
+	}
+}
+}
+class TestAnimal{
+	public static void main(String[]args){
+	Animal a1=new Animal();
+        Dog d1=new Dog();
+        Cat c1=new Cat();
+        Lion l1=new Lion();
+        Cow co1=new Cow();
+        Insaan i1=new Insaan();
+        a1.makesound(c1);
+	}
+}
+
+output:
+D:\NSCM4\MethodOverLoading>javac Animal.java
+Animal.java:41: error: cannot find symbol
+a1.makesound(c1);
+  ^
+  symbol:   method makesound(Cat)
+  location: variable a1 of type Animal
+1 error
