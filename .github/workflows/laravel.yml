@@ -1,20 +1,27 @@
 name: Laravel
+
 on:
   push:
     branches: [ main ]
-jobs:
-  web-deploy:
-    name:  Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get latest code
-      uses: actions/checkout@v2
+  pull_request:
+    branches: [ main ]
 
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: 159.89.171.253
-        username: root
-        password: Raghav2020@Test
-        protocol: ftps
-        port: 22 
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: 159.89.171.253
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          username: root
+          password: Raghav2020@Test
+          script: |
+            cd /var/www/html/
+            git checkout -f 
+            git pull origin main
