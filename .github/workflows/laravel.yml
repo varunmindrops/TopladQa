@@ -20,7 +20,6 @@ jobs:
           host: 159.89.171.253
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           username: root
-          password: Raghav2020@Test
           script: |
             cd /var/www/html/
             git checkout -f 
