@@ -18,5 +18,8 @@ jobs:
           host: 159.89.171.253
           username: root
           password: Raghav2020@Test
-          script: 'cd /var/www/html/ && ./deployer.sh'
+          script: |
+            cd /var/www/html/
+            git checkout -f 
+            git pull origin main
             
