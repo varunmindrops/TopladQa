@@ -1,8 +1,8 @@
 set -e
 
-echo "Deployig application"
+echo "Deployig application..."
 
-#exit maintenance mode
+#Enter maintenance mode
 (php artisan down --message 'the app is being deploying')
    #update codebase
 git pull origin master
