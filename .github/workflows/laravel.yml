@@ -12,15 +12,11 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Deployment
         uses: appleboy/ssh-action@master
         with:
           host: 159.89.171.253
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
           username: root
-          script: |
-            cd /var/www/html/
-            git checkout -f 
-            git pull origin main
+          password: Raghav2020@Test
+          script: 'cd /var/www/html/ && ./deployer.sh'
+            
