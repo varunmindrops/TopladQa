@@ -8,9 +8,6 @@ echo "Deploying application ..."
     # Update codebase
     git fetch origin main
 
-    # Install dependencies based on lock file
-    composer install --no-interaction --prefer-dist --optimize-autoloader
-
 # Exit maintenance mode
 php artisan up
 
