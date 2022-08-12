@@ -3,12 +3,12 @@ name: CD
 on:
   push:
     branches: [ main ]
- 
+    
 jobs:
-  deploy:
+    deploy:
     runs-on: ubuntu-latest
-
-    - name: Deploy to main
+    steps:
+    - name: Deploy to nerdhood.de
       uses: appleboy/ssh-action@master
       with:
         username: root
