@@ -6,16 +6,16 @@ on:
   pull_request:
     branches: [ main ]
 
- deploy:
+  jobs:
+    laravel-tests:
+    
     runs-on: ubuntu-latest
   
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Deployment
         uses: appleboy/ssh-action@master
         with:
-          host: 159.89.171.253          
-          username: root
-          password: Raghav2020@Test          
+          host: 159.89.171.253
+          username: root          
+          password: Raghav2020@Test
           script: 'cd /var/www/html/ && ./deployer.sh' 
