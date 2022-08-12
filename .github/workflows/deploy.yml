@@ -1,12 +1,6 @@
 name: CI-CD # Give your workflow a name
 
-#on: push # Run the workflow for each push event (i.e commit)
-
-on:
-  push:
-    branches: [ main ] 
-  pull_request:
-    branches: [ main ]
+on: push # Run the workflow for each push event (i.e commit)
 
 jobs:
   build-js:
