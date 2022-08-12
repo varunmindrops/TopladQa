@@ -1,9 +1,9 @@
 name: CD
-
+ 
 on:
   push:
-    branches: [ production ]
-
+    branches: [ main ]
+ 
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install
-    - run: npm run production
+    - run: npm run main
     - name: Commit built assets
       run: |
         git config --local user.email "action@github.com"
@@ -25,10 +25,10 @@ jobs:
         git add -f public/
         git commit -m "Build front-end assets"
         git push -f origin deploy
-    - name: Deploy to production
+    - name: Deploy to main
       uses: appleboy/ssh-action@master
       with:
-        username: root
-        host: 159.89.171.253
-        password: Raghav2020@Test
-        script: 'cd /var/www/html/ && ls && sh server_deploy.sh'
+        username: YOUR USERNAME GOES HERE
+        host: YOUR SERVER'S HOSTNAME GOES HERE
+        password: ${{ secrets.SSH_PASSWORD }}
+        script: 'cd /var/www/html && ./server_deploy.sh'
