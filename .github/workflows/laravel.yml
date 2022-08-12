@@ -1,25 +1,34 @@
-name: Laravel
+name: CD
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ production ]
 
 jobs:
-
   deploy:
     runs-on: ubuntu-latest
-  
     steps:
-      - name: Deployment
-        uses: appleboy/ssh-action@master
-        with:
-          host: 159.89.171.253
-          username: root
-          password: Raghav2020@Test
-          script: |
-            cd /var/www/html/
-            git checkout -f 
-            git pull origin main
-            
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PUSH_TOKEN }}
+    - name: Set up Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run production
+    - name: Commit built assets
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git checkout -B deploy
+        git add -f public/
+        git commit -m "Build front-end assets"
+        git push -f origin deploy
+    - name: Deploy to production
+      uses: appleboy/ssh-action@master
+      with:
+        username: root
+        host: 159.89.171.253
+        password: Raghav2020@Test
+        script: 'cd /var/www/html/ && ls && sh server_deploy.sh'

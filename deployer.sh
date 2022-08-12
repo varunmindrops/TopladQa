@@ -1,12 +1,18 @@
+#!/bin/sh
 set -e
 
-echo "Deployig application..."
+echo "Deploying application ..."
 
-#Enter maintenance mode
-(php artisan down --message 'the app is being deploying')
-   #update codebase
-git pull origin master
-#exit maintenance mode
-php artisan up 
+# Enter maintenance mode
+(php artisan down --message 'The app is being (quickly!) updated. Please try again in a minute.') || true
+    # Update codebase
+    git fetch origin deploy
+    git reset --hard origin/deploy
 
-echo "Appliaction deployed"
+    # Install dependencies based on lock file
+    composer install --no-interaction --prefer-dist --optimize-autoloader
+
+# Exit maintenance mode
+php artisan up
+
+echo "Application deployed!"
