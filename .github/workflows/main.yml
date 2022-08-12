@@ -21,10 +21,10 @@ jobs:
       run: |
         git config --local user.email "varun@mindrops.com"
         git config --local user.name "varun dhiman"
-        git checkout -B deploy
+        git checkout -B main
         git add -f public/
         git commit -m "Build front-end assets"
-        git push -f origin deploy
+        git push -f origin main
     - name: Deploy to main
       uses: appleboy/ssh-action@master
       with:
