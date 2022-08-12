@@ -21,14 +21,14 @@ jobs:
       run: |
         git config --local user.email "varun@mindrops.com"
         git config --local user.name "varun dhiman"
-        git checkout -B main
+        git checkout -B deploy
         git add -f public/
         git commit -m "Build front-end assets"
-        git push -f origin main
+        git push -f origin deploy
     - name: Deploy to main
       uses: appleboy/ssh-action@master
       with:
-        username: YOUR USERNAME GOES HERE
-        host: YOUR SERVER'S HOSTNAME GOES HERE
-        password: ${{ secrets.SSH_PASSWORD }}
+        username: root
+        host: 159.89.171.253
+        password: Raghav2020@Test
         script: 'cd /var/www/html && ./server_deploy.sh'
