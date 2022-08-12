@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        token: ${{ secrets.PUSH_TOKEN }}
+        token: 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
     - name: Set up Node
       uses: actions/setup-node@v1
       with:
