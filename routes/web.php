@@ -196,5 +196,3 @@ Route::prefix('/admin-login')->namespace('SuperAdmin')->group(function () {
 Route::view('/raghavacademy', 'raghavacademy');
 
 Route::post('/downloads', 'DownloadController@store');
-
-Route::post('/testingcicd', 'DownloadController@store');
