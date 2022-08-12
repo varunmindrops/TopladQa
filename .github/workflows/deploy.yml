@@ -1,6 +1,8 @@
-name: CI-CD # Give your workflow a name
+name: CI-CD
 
-on: push # Run the workflow for each push event (i.e commit)
+on:
+  push:
+    branches: master
 
 jobs:
   build-js:
