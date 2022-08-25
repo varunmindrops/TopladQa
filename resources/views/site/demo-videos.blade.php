@@ -85,9 +85,21 @@
                                     <!-- <li class="breadcrumb-item"><a href="/">Home</a></li> -->
                                     <li title="Demo Videos" class="breadcrumb-item active" aria-current="page">Demo
                                         Videos
-                                    </li>
+                                    </li>                                    
                                 </ol>
 
+                                <div style="margin-left:auto" class="col-md-3 form-group">
+                                    <select class="form-control" id="CourseYear">
+                                        @if (last(request()->segments()) == 2022)                                
+                                        <option class="apports" value="{{ url('/').'/'.$segment.'/demo-videos'}}/2016">2016</option>
+                                        <option selected class="apports" value="{{ url('/').'/'.$segment.'/demo-videos'}}/2022">2022</option>
+                                        @else
+                                        <option selected class="apports" value="{{ url('/').'/'.$segment.'/demo-videos'}}/2016">2016</option>
+                                        <option class="apports" value="{{ url('/').'/'.$segment.'/demo-videos'}}/2022">2022</option>
+                                        @endif
+                                    </select>
+                                </div>
+                                
                             </div>
                         </nav>
                         <div class="multi_vid_card">
@@ -273,6 +285,15 @@ function topFunction() {
 // } else {
 //     $("#show_in").hide();
 // }
+</script>
+
+<script>
+    $('#CourseYear').on('change', function (e) {
+        var link = $("option:selected", this).val();
+        if (link) {
+            location.href = link;
+        }
+    });
 </script>
 
 

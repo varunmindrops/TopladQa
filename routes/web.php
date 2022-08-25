@@ -67,7 +67,7 @@ Route::get('/{name}/cma-combo-offer', function () {return view('site.cma-combo-o
 Route::get('/{name}/cs-combo-offer', function () {return view('site.cs-combo-offer');});
 Route::get('/{name}/ca-combo-offer', function () {return view('site.ca-combo-offer');});
 
-Route::get('/{name}/demo-videos', 'DemoVideosController@index');
+Route::get('/{name}/demo-videos/{year?}', 'DemoVideosController@index');
 // Route::get('/{name}/cma-face-to-face-classes', function () { return view('site.face2face'); })->where('name', 'cma');
 // Route::get('/{name}/cs-face-to-face-classes', function () { return view('site.cs-face2face'); })->where('name', 'cs');
 
